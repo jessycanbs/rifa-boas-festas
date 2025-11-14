@@ -1,3 +1,44 @@
+body {
+   /* Mude o degradê para NUNCA ficar branco */
+    background-image: linear-gradient(
+        to bottom,  
+        #0069d9, /* Seu azul forte */
+        #041e3a  /* Um azul bem escuro, quase preto */
+    );
+    background-attachment: fixed; /* Isso é importante para o blur funcionar */
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    
+    /* Mantém os paddings que corrigimos para o celular */
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Contraste do Conteúdo no Vidro --- */
+
+/* Força Título, Prêmio e Legenda a serem brancos */
+.display-4, .h3.fw-bold, .lead {
+    color: #FFFFFF !important; /* Usa !important para vencer o 'text-success' */
+    
+    /* Sombra no texto para 'saltar' do fundo */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* --- Estilo Glassmorphism --- */
+.bg-white.shadow {
+    /* 1. Remove o fundo branco sólido */
+    background-color: rgba(255, 255, 255, 0.15) !important; /* Branco bem transparente */
+    
+    /* 2. A MÁGICA: O desfoque */
+    backdrop-filter: blur(20px);
+    
+    /* 3. Polimento */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Sombra mais difusa */
+}
 
 /* --- Estilos do Timer --- */
 
@@ -44,6 +85,7 @@
 #btn-reservar {
     background-color: #007bff;
     border-color: #007bff;
+    transition: all 0.2s ease-in-out;
 }
 /* Efeito hover do botão */
 #btn-reservar:hover {
@@ -51,44 +93,23 @@
     border-color: #0056b3;
 }
 
-/* Continue para whatsapp */
-#btn-reservar-wpp {
-    background-color: #31813c;
-    border-color: #31813c;
-}
-#btn-reservar-wpp:hover {
-    background-color: #00b32d; /* Um azul mais escuro no hover */
-    border-color: #00b32d;
-}
 
-body {
-    /* NOVO GRADIENTE: Azul vibrante para azul mais claro */
-    background-image: linear-gradient(
-        to bottom,  
-        #0069d9, /* Um azul forte, similar ao da arte */
-        #00A9FF  /* Um azul-céu mais vibrante */
-    );
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    
-    /* Mantém os paddings que corrigimos para o celular */
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
 
 /* Estilos simples para os estados dos números */
+/* Transforma os números livres em 'fichas de vidro' */
 .numero-card {
-    cursor: pointer;
-    transition: all 0.2s;
-    border: 2px solid #ddd;
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo de vidro sutil */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borda de vidro */
+    color: #FFFFFF; /* Texto do número vira BRANCO */
+    box-shadow: none; /* Remove sombra antiga */
 }
 
-/* Deixa o hover do número livre com o mesmo azul */
+/* Hover do número livre */
 .numero-card:hover {
+    background-color: rgba(255, 255, 255, 0.4); /* Fica mais 'cheio' no hover */
+    border-color: #FFFFFF;
+    color: #FFFFFF;
     transform: scale(1.05);
-    border-color: #007bff; /* Azul primário */
-    border-width: 2px;
     cursor: pointer;
 }
 /*.numero-livre:hover { transform: scale(1.05); border-color: #28a745; }*/
