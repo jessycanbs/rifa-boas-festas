@@ -32,41 +32,49 @@
     color: #333;
 }
 
-/* Efeito de hover para os números LIVRES */
-.numero-card.bg-livre:hover {
-    transform: scale(1.05); /* Efeito de 'saltar' levemente */
-    border-color: #28a745;  /* Borda fica verde (cor de seleção) */
-    border-width: 2px;      /* Garante que a borda fique mais grossa */
-    cursor: pointer;           /* Mostra a 'mãozinha' */
+/* Deixa o número selecionado com o tom de azul da arte */
+.bg-selecionado { 
+    background-color: #007bff; /* Azul primário do Bootstrap */
+    color: white; 
+    border-color: #007bff; 
 }
 
-/* Força a cor do botão (Exemplo TEMA VERDE) */
+
+/* Deixa o botão de reservar azul também */
 #btn-reservar {
-    background-color: #28a745; /* Verde padrão do Bootstrap */
-    border-color: #28a745;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+/* Efeito hover do botão */
+#btn-reservar:hover {
+    background-color: #0056b3; /* Um azul mais escuro no hover */
+    border-color: #0056b3;
 }
 
-/* Define o hover (um verde mais escuro) */
-#btn-reservar:hover {
-    background-color: #218838; 
-    border-color: #1e7e34;
+/* Continue para whatsapp */
+#btn-reservar-wpp {
+    background-color: #31813c;
+    border-color: #31813c;
+}
+#btn-reservar-wpp:hover {
+    background-color: #00b32d; /* Um azul mais escuro no hover */
+    border-color: #00b32d;
 }
 
 body {
-    /* ... (suas regras de background-image e min-height) ... */
-    background-image: linear-gradient(to bottom, #041b3d, #FFFFFF);
+    /* NOVO GRADIENTE: Azul vibrante para azul mais claro */
+    background-image: linear-gradient(
+        to bottom,  
+        #0069d9, /* Um azul forte, similar ao da arte */
+        #00A9FF  /* Um azul-céu mais vibrante */
+    );
     min-height: 100vh;
     background-repeat: no-repeat;
-
-    /* ADICIONE ESTAS 3 LINHAS:
-    Elas criam a "moldura" de degradê
-    */
+    
+    /* Mantém os paddings que corrigimos para o celular */
     padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
-    /* Não mexemos no padding-bottom, pois ele já é
-    controlado pela classe "pb-5" que está na sua tag <body> 
-    */
 }
 
 /* Estilos simples para os estados dos números */
@@ -75,11 +83,19 @@ body {
     transition: all 0.2s;
     border: 2px solid #ddd;
 }
-.numero-livre:hover { transform: scale(1.05); border-color: #28a745; }
+
+/* Deixa o hover do número livre com o mesmo azul */
+.numero-card:hover {
+    transform: scale(1.05);
+    border-color: #007bff; /* Azul primário */
+    border-width: 2px;
+    cursor: pointer;
+}
+/*.numero-livre:hover { transform: scale(1.05); border-color: #28a745; }*/
 
 /* Classes de estado */
 .bg-livre { background-color: #f8f9fa; color: #333; }
-.bg-selecionado { background-color: #28a745; color: white; border-color: #28a745; }
+/*.bg-selecionado { background-color: #28a745; color: white; border-color: #28a745; }*/
 .bg-vendido { background-color: #dc3545; color: white; cursor: not-allowed; opacity: 0.6; }
 
 /* Barra flutuante de checkout */

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rifa da Jessyca</title>
+    <title>Rifa de Boas Festas!</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,8 +12,15 @@
     <div class="container py-5 mb-5 bg-white rounded shadow">
 
         <div class="text-center mb-5">
-            <h1>🎟️ Rifa da Jessyca</h1>
+    
+            <h1 class="display-4 fw-bold">💙 Rifa de Boas Festas! 💙</h1>
+            
+            <p class="h3 fw-bold text-success my-3">
+                Prêmio: R$ 500,00 🎁
+            </p>
+            
             <p class="lead">Selecione seus números e clique em reservar!</p>
+
             <div class="timer-container my-4">
                 <div class="timer-badge">O sorteio será em:</div>
                 <div id="countdown-display" class="shadow-sm">Carregando...</div>
@@ -25,7 +32,7 @@
 
             <div class="d-flex justify-content-center gap-3">
                 <div><span class="badge bg-light text-dark border">Livre</span></div>
-                <div><span class="badge bg-success">Selecionado</span></div>
+                <div><span class="badge bg-primary">Selecionado</span></div>
                 <div><span class="badge bg-danger">Vendido</span></div>
             </div>
         </div>
@@ -41,7 +48,7 @@
                 <h5 class="m-0">Selecionados: <span id="contador-selecao">0</span></h5>
                 <small class="text-muted">Total: R$ <span id="valor-total">0,00</span></small>
             </div>
-            <button onclick="enviarWhatsApp()" class="btn btn-success btn-lg" id="btn-reservar">
+            <button onclick="enviarWhatsApp()" class="btn btn-success btn-lg" id="btn-reservar-wpp">
                 Continuar para WhatsApp
             </button>
         </div>
