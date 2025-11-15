@@ -20,10 +20,15 @@
         <div class="text-center mb-5">
     
             <h1 class="display-4 fw-bold">🤍 Rifa de Boas Festas! 🤍</h1>
-            
-            <p class="h3 fw-bold text-success my-3">
+        
+            <p class="h3 fw-bold text-white my-3" style="text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
                 Prêmio: R$ 500,00 🎁
             </p>
+
+            <div class="info-sorteio text-white-50 fst-italic mb-3">
+                <p class="lead">O sorteio será pela Loteria Federal!</p>
+                <small>Usaremos os últimos dígitos do 1º prêmio do dia 20/dez. Boa sorte!</small>
+            </div>
             
             <p class="lead">Selecione seus números e clique em reservar!</p>
 
@@ -50,17 +55,88 @@
 
     <div id="checkout-bar">
         <div class="container d-flex justify-content-between align-items-center">
+            
             <div>
-                <h5 class="m-0">Selecionados: <span id="contador-selecao">0</span></h5>
-                <small class="text-muted">Total: R$ <span id="valor-total">0,00</span></small>
+                <h5 class="m-0 text-shadow">Selecionados: <span id="contador-selecao">0</span></h5>
+                <small class="text-shadow">Total: R$ <span id="valor-total">0,00</span></small>
             </div>
-            <button onclick="enviarWhatsApp()" class="btn btn-success btn-lg" id="btn-reservar">
-                Continuar para WhatsApp
+
+            <button onclick="reservarNumeros()" class="btn btn-lg" id="btn-reservar">
+                Reservar Números
             </button>
         </div>
     </div>
 
+    </div>
+
+
+    <div class="modal fade" id="modalPagamento" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">✅ Números Reservados!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body">
+                    <p class="lead">Seus números estão travados por <strong>15 minutos</strong>.</p>
+                    <p>Pague agora para garantir sua vaga:</p>
+                    
+                    <div class="card bg-light p-3">
+                        <h5 class="m-0 text-start">Chave Pix (Número):</h5>
+                        
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <h6 class="text-primary fw-bold mb-0" style="font-size: 1.2rem;" id="pix-key-text">
+                                88981688970
+                            </h6>
+                            
+                            <button class="btn btn-primary btn-sm" id="btn-copiar-pix" onclick="copiarPix()">
+                                Copiar
+                            </button>
+                        </div>
+                        
+                        <small class="text-muted text-start mt-1">(Jessyca Barbosa)</small>
+                    </div>
+                    <hr>
+                    <p>Após pagar, envie o comprovante.</p>
+
+                    <button onclick="abrirWhatsApp()" class="btn btn-success btn-lg w-100">
+                        Já Paguei! Enviar Comprovante
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script>
+
+    <script>
+        // Import the functions you need from the SDKs you need
+        // import { initializeApp } from "firebase/app";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAk3P5RcKeyZdkRXpz0Nng2AmUd7mDFhMk",
+            authDomain: "rifa-boas-festas.firebaseapp.com",
+            databaseURL: "https://rifa-boas-festas-default-rtdb.firebaseio.com",
+            projectId: "rifa-boas-festas",
+            storageBucket: "rifa-boas-festas.firebasestorage.app",
+            messagingSenderId: "82699674406",
+            appId: "1:82699674406:web:56fe19586eb7260c2917e7"
+        };
+
+        // Inicializa o Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
     <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
 </body>
 </html>
