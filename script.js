@@ -4,7 +4,7 @@ const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRKGsyuscKYI0
 
 // 2. Rifa
 const PRECO_POR_NUMERO = 10.00; 
-const WHATSAPP_NUMERO = '88981688970'; // Número da sua amiga
+const WHATSAPP_NUMERO = '5588981688970'; // Número da sua amiga
 
 // 3. Trava do Firebase
 const TRAVA_MINUTOS = 15; // Tempo que o número fica "pendente"
