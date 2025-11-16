@@ -7,7 +7,7 @@ const PRECO_POR_NUMERO = 10.00;
 const WHATSAPP_NUMERO = '5588981688970'; // Número da sua amiga
 
 // 3. Trava do Firebase
-const TRAVA_MINUTOS = 15; // Tempo que o número fica "pendente"
+const TRAVA_MINUTOS = 35; // Tempo que o número fica "pendente"
 const TOTAL_NUMEROS = 300; // Total de números na rifa (para o loop)
 
 // --- VARIÁVEIS DE ESTADO (O Cérebro) ---
